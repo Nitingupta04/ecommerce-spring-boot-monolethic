@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-Commerce Store</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-shopping-cart"></i>
+                <span>E-Commerce Store</span>
+            </div>
+            <nav class="nav-menu">
+                <a th:href="@{/}" class="nav-link">Home</a>
+                <a th:href="@{/products}" class="nav-link">Products</a>
+                <a th:href="@{/categories}" class="nav-link">Categories</a>
+                <a th:href="@{/about}" class="nav-link active">About</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="nav-action">
+                    <i class="fas fa-user"></i>
+                    <span>Login</span>
+                </a>
+                <a href="#" class="nav-action">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Our Store</h1>
+            <p>Learn more about our mission, values, and commitment to excellence</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-column">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2025, E-Commerce Store has been committed to providing the best shopping experience for our customers. We started with a simple vision: to make quality products accessible to everyone at competitive prices.</p>
+                    <p>Our mission is to offer high-quality products at competitive prices while ensuring excellent customer service. We believe that shopping should be convenient, enjoyable, and trustworthy.</p>
+                    <p>Over the years, we have built a reputation for reliability, quality, and customer satisfaction. Our team works tirelessly to curate the best products and provide exceptional service to every customer.</p>
+                </div>
+                <div class="about-column">
+                    <h3>Why Choose Us?</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Quality Products - We carefully select only the best products</li>
+                        <li><i class="fas fa-check"></i> Fast Delivery - Quick and reliable shipping worldwide</li>
+                        <li><i class="fas fa-check"></i> Secure Payment - Your transactions are safe and secure</li>
+                        <li><i class="fas fa-check"></i> 24/7 Support - Our customer service team is always here to help</li>
+                        <li><i class="fas fa-check"></i> Easy Returns - Hassle-free return policy</li>
+                        <li><i class="fas fa-check"></i> Competitive Prices - Best deals and regular discounts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Customer First</h3>
+                    <p>Our customers are at the heart of everything we do. We prioritize their needs and satisfaction above all else.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>We maintain the highest standards of quality in all our products and services to ensure customer satisfaction.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trust & Transparency</h3>
+                    <p>We believe in building trust through transparent business practices and honest communication.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously innovate to improve our services and provide better experiences for our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>John Smith</h3>
+                    <p class="team-role">CEO & Founder</p>
+                    <p>Passionate about creating exceptional shopping experiences and building lasting customer relationships.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="team-role">Head of Operations</p>
+                    <p>Ensures smooth operations and maintains the highest standards of service delivery across all channels.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Mike Chen</h3>
+                    <p class="team-role">Customer Success Manager</p>
+                    <p>Dedicated to providing exceptional customer support and ensuring every customer has a great experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@ecommerce.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+1 234 567 890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>123 Commerce Street<br>Business District, BD 12345</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>E-Commerce Store</h4>
+                    <p>Your trusted online shopping destination.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li><a th:href="@{/products}">Products</a></li>
+                        <li><a th:href="@{/categories}">Categories</a></li>
+                        <li><a th:href="@{/about}">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@ecommerce.com</p>
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

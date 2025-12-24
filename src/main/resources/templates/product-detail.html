@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${product.name} + ' - Product Details'">Product Details</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="navbar">
+    <div class="container">
+        <a th:href="@{/}">🛍️ E‑Commerce</a>
+    </div>
+</header>
+
+<main class="container">
+    <div class="product-detail">
+        <div class="image">
+            <!-- Uncomment the following image tag if your products have images -->
+            <!-- <img th:src="${product.imageUrl}" alt="Product image"> -->
+            <div class="product-placeholder-large">
+                <span class="product-icon-large">📦</span>
+            </div>
+        </div>
+        <div class="details">
+            <h1 th:text="${product.name}">Product Name</h1>
+            <p th:text="${product.description}">Product description</p>
+            <div class="price">€<span th:text="${product.price}">0.00</span></div>
+            <div class="rating-section">
+                <span class="rating-label">Average rating:</span>
+                <div class="stars" th:data-rating="${averageRating}">
+                    <span class="star">⭐</span>
+                    <span class="rating-value" th:text="${#numbers.formatDecimal(averageRating, 1, 1)}">0.0</span>
+                    <span class="rating-max">/5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="reviews">
+        <h3>Customer Reviews</h3>
+        <div th:if="${#lists.isEmpty(reviews)}" class="no-reviews">
+            <div class="no-reviews-icon">💬</div>
+            <p>No reviews yet. Be the first to share your experience!</p>
+        </div>
+        <article th:each="review : ${reviews}" class="review">
+            <div class="review-header">
+                <strong th:text="${review.rating} + ' / 5'"></strong>
+                <div class="review-stars">
+                    <span th:each="i : ${#numbers.sequence(1, 5)}" 
+                          th:class="${i <= review.rating} ? 'star-filled' : 'star-empty'">⭐</span>
+                </div>
+            </div>
+            <p th:text="${review.comment}">Review comment</p>
+        </article>
+    </section>
+
+    <section class="review-form">
+        <h3>Share Your Experience</h3>
+        <form th:action="@{/product/{id}/review(id=${product.id})}" method="post" th:object="${newReview}">
+            <div class="form-group">
+                <label for="rating">Rating (1-5):</label>
+                <div class="rating-input">
+                    <input type="number" id="rating" name="rating" min="1" max="5" th:field="*{rating}" required>
+                    <div class="rating-display">
+                        <span class="rating-text">Rate this product</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comment">Your Review:</label>
+                <textarea id="comment" name="comment" rows="4" th:field="*{comment}" 
+                          placeholder="Tell us about your experience with this product..." required></textarea>
+            </div>
+            <button type="submit">
+                <span>Submit Review</span>
+                <span class="button-icon">📝</span>
+            </button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 E‑Commerce. Built with ❤️ using microservices architecture.</p>
+</footer>
+</body>
+</html>
